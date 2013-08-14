@@ -44,3 +44,13 @@ end
 function Tree:toNewick
   return self.root:toNewick() .. ';'
 end
+
+function calcSeqDist(s1, s2)
+  distance = 0
+  for i = 1, #s1 do
+    if s1:sub(i,i) != s2:sub(i,i) then
+      distance = distance + 1
+    end
+  end
+  return distance
+end
